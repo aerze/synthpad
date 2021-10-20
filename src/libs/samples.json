@@ -1,0 +1,47 @@
+[
+  {
+    "fileName": "bongo-1",
+    "displayName": "Bongo 1",
+    "instrumentType": "DRUM"
+  },
+  {
+    "fileName": "conga-1",
+    "displayName": "Conga 1",
+    "instrumentType": "DRUM"
+  },
+  {
+    "fileName": "shaker-1",
+    "displayName": "Shaker 1",
+    "instrumentType": "PERC"
+  },
+  {
+    "fileName": "shaker-2",
+    "displayName": "Shaker 2",
+    "instrumentType": "PERC"
+  },
+  {
+    "fileName": "snare-1",
+    "displayName": "Snare 1",
+    "instrumentType": "DRUM"
+  },
+  {
+    "fileName": "snare-2",
+    "displayName": "Snare 2",
+    "instrumentType": "DRUM"
+  },
+  {
+    "fileName": "snare-3",
+    "displayName": "Snare 3",
+    "instrumentType": "DRUM"
+  },
+  {
+    "fileName": "snare-4",
+    "displayName": "Snare 4",
+    "instrumentType": "DRUM"
+  },
+  {
+    "fileName": "snare-5",
+    "displayName": "Snare 5",
+    "instrumentType": "DRUM"
+  }
+]

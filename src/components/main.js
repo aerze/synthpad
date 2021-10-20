@@ -4,15 +4,15 @@ import { Button } from "./button";
 
 export function Main(props) {
   const [state, setHookState] = useState({ ready: false, volume: 50 });
-  const setState = o => setHookState(s => ({...s, ...o}));
+  const setState = (o) => setHookState((s) => ({ ...s, ...o }));
 
   useEffect(() => {
-    const updateState = () => setState({ ready: true }); 
-    props.audio.addEventListener("ready", updateState);
+    const updateState = () => setState({ ready: true });
+    props.sm.addEventListener("ready", updateState);
     return () => {
-      props.audio.removeEventListener('ready', updateState)
-    }
-  }, [props.audio, state]);
+      props.sm.removeEventListener("ready", updateState);
+    };
+  }, [props.sm, state]);
 
   return (
     <div
@@ -24,7 +24,7 @@ export function Main(props) {
       }}
     >
       <div style={{ padding: "1.2em" }}>
-        <h2>{state.ready ? "Ready" : "Loading Audio Files"}</h2>
+        <h2>{state.ready ? "Ready" : "Loading sm Files"}</h2>
         <label htmlFor="volume">Volume: {state.volume}</label>
         <input
           id="volume"
@@ -35,34 +35,34 @@ export function Main(props) {
           value={state.volume.toString()}
           onChange={(event) => {
             setState({ volume: event.target.value });
-            props.audio.setVolume(event.target.value);
+            props.sm.setGlobalVolume(event.target.value);
           }}
         />
       </div>
       <Grid>
         <Row>
-          <Button audio={props.audio} fileName="bongo-1" />
-          <Button audio={props.audio} fileName="conga-1" />
-          <Button audio={props.audio} fileName="shaker-1" />
-          <Button audio={props.audio} fileName="shaker-2" />
+          <Button sm={props.sm} fileName="bongo-1" />
+          <Button sm={props.sm} fileName="conga-1" />
+          <Button sm={props.sm} fileName="shaker-1" />
+          <Button sm={props.sm} fileName="shaker-2" />
         </Row>
         <Row>
-          <Button audio={props.audio} fileName="snare-1" />
-          <Button audio={props.audio} fileName="snare-2" />
-          <Button audio={props.audio} fileName="snare-3" />
-          <Button audio={props.audio} fileName="snare-4" />
+          <Button sm={props.sm} fileName="snare-1" />
+          <Button sm={props.sm} fileName="snare-2" />
+          <Button sm={props.sm} fileName="snare-3" />
+          <Button sm={props.sm} fileName="snare-4" />
         </Row>
         <Row>
-          <Button audio={props.audio} fileName="snare-5" />
-          <Button audio={props.audio} fileName="snare-5" />
-          <Button audio={props.audio} fileName="snare-5" />
-          <Button audio={props.audio} fileName="snare-5" />
+          <Button sm={props.sm} fileName="snare-5" />
+          <Button sm={props.sm} fileName="snare-5" />
+          <Button sm={props.sm} fileName="snare-5" />
+          <Button sm={props.sm} fileName="snare-5" />
         </Row>
         <Row>
-          <Button audio={props.audio} fileName="bongo-1" />
-          <Button audio={props.audio} fileName="conga-1" />
-          <Button audio={props.audio} fileName="shaker-1" />
-          <Button audio={props.audio} fileName="shaker-2" />
+          <Button sm={props.sm} fileName="bongo-1" />
+          <Button sm={props.sm} fileName="conga-1" />
+          <Button sm={props.sm} fileName="shaker-1" />
+          <Button sm={props.sm} fileName="shaker-2" />
         </Row>
       </Grid>
     </div>

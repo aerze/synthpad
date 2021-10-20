@@ -1,16 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Main } from "./components/main";
-import { Audio } from './libs/audio';
+import { SampleManager } from "./libs/sampleManager";
 import "./index.css";
 
-
-const audio = new Audio();
-audio.init();
+const sm = new SampleManager();
+sm.init();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main audio={audio} />
+    <Main sm={sm} />
   </React.StrictMode>,
   document.getElementById("root")
 );
